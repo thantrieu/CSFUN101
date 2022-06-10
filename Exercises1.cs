@@ -272,13 +272,13 @@ namespace L101Exercises1
                             List<Register> result = null;
                             try
                             {
-                                studentUtils.FindRegisterByStudentId(registers);
+                                result = studentUtils.FindRegisterByStudentId(registers);
                             }
                             catch (InvalidSubjectIdException e)
                             {
                                 Console.WriteLine(e);
                             }
-                            if (result != null && result[0] == null)
+                            if (result == null || result[0] == null)
                             {
                                 Console.WriteLine("==> Không có kết quả tìm kiếm. <==");
                             }
@@ -307,7 +307,7 @@ namespace L101Exercises1
                                 {
                                     Console.WriteLine(e);
                                 }
-                                if (result != null && result[0] == null)
+                                if (result == null || result[0] == null)
                                 {
                                     Console.WriteLine("==> Không có kết quả tìm kiếm. <==");
                                 }
